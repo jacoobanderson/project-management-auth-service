@@ -1,0 +1,29 @@
+# Build artifacts
+target/
+
+# Log files
+*.log
+
+# Local configuration files
+*.local
+*.conf
+*.properties
+*.yml
+
+# Sensitive information
+secrets.properties
+api.keys
+
+# MongoDB data files
+data/
+
+# JWT signing keys
+jwt-signing-key.pem
+jwt-signing-key.pub
+This .gitignore file includes patterns for excluding build artifacts, log files, local configuration files, and sensitive information such as API keys. Additionally, it also excludes the MongoDB data files and the JWT signing keys, which should not be committed to the repository.
+
+Note that this is just an example and the exact files you want to exclude may vary depending on your specific project and setup. Feel free to customize the .gitignore file to suit your needs.
+
+
+
+
