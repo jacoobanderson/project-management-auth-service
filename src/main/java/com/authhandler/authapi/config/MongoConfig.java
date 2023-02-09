@@ -20,12 +20,6 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Bean
     public MongoClient mongoClient() {
-        // ConnectionString connectionString = new ConnectionString(mongoUri);
-        // MongoClientSettings settings = MongoClientSettings.builder()
-        //     .applyConnectionString(connectionString)
-        //     .build();
-        // MongoClient mongoClient = MongoClients.create(settings);
-        // return mongoClient;
         ConnectionString connectionString = new ConnectionString(mongoUri);
         MongoClientSettings settings = MongoClientSettings.builder()
             .applyConnectionString(connectionString)
@@ -39,9 +33,6 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        // ConnectionString connectionString = new ConnectionString(mongoUri);
-        // return connectionString.getDatabase();
-        // MongoDatabase database = mongoClient.getDatabase("project-management-auth");
         return "project-management-auth";
     }
 }
