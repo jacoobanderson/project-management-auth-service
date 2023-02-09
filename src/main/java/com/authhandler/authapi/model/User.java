@@ -1,7 +1,6 @@
 package com.authhandler.authapi.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Document(collection = "users")
 public class User {
@@ -14,7 +13,6 @@ public class User {
 
   public User(String username, String password) {
     this.username = username;
-    this.password = new BCryptPasswordEncoder().encode(password);
   }
 
   public String getId() {
