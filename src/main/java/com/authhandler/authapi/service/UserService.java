@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.authhandler.authapi.model.LoginRequest;
 import com.authhandler.authapi.model.User;
 import com.authhandler.authapi.repository.UserRepository;
 
@@ -20,9 +21,9 @@ public class UserService {
     return userRepository.save(user);
   }
 
-  public User login(String username, String password) {
-    User user = userRepository.findByUsername(username);
-    if (user != null && bCryptPasswordEncoder.matches(password, user.getPassword())) {
+  public User login(LoginRequest login) {
+    User user = userRepository.findByUsername(login.getUsername());
+    if (user != null && bCryptPasswordEncoder.matches(login.getPassword(), user.getPassword())) {
       return user;
     }
     return null;
