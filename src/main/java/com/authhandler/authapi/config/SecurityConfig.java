@@ -18,8 +18,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/home", "/api/users/register").permitAll()
-                        .anyRequest().authenticated());
+                        // .requestMatchers("/", "/home", "/api/users/register").permitAll()
+                        .anyRequest().permitAll())
+                .httpBasic()
+                .and().csrf().disable();
 
         return http.build();
     }
