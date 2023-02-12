@@ -2,7 +2,6 @@ package com.authhandler.authapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.mongodb.ConnectionString;
@@ -11,7 +10,6 @@ import com.mongodb.ServerApi;
 import com.mongodb.ServerApiVersion;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
 
 
 public class MongoConfig extends AbstractMongoClientConfiguration {

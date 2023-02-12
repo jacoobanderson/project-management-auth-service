@@ -15,7 +15,6 @@ public class LoggingController {
         logger.info("An INFO Message");
         logger.warn("A WARN Message");
         logger.error("An ERROR Message");
-        // System.out.println("TESESTESTESTSETSETSETSTESTEET");
 
         return "Howdy! Check out the Logs to see the output...";
     }

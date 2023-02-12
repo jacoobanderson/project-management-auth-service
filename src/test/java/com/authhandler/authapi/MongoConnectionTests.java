@@ -13,13 +13,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MongoConnectionTest {
+public class MongoConnectionTests {
     @Autowired
     private MongoClient mongoClient;
  
     @Test
     public void mongoDatabaseShouldConnect() {
         ListDatabasesIterable<Document> databases = mongoClient.listDatabases();
-        assertEquals(databases, isNotNull());
+        assertEquals(databases, isNotNull(), "Should connect to the database");
     }
 }
