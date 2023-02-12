@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.authhandler.authapi.model.LoginRequest;
 import com.authhandler.authapi.model.User;
 import com.authhandler.authapi.service.UserService;
+import com.common.JwtResponse;
 
 @RestController
 @RequestMapping("/api/users")
@@ -23,7 +24,7 @@ public class UserController {
   }
 
   @PostMapping("/login")
-  public User login(@RequestBody LoginRequest loginRequest) {
+  public JwtResponse login(@RequestBody LoginRequest loginRequest) {
     return userService.login(loginRequest);
   }
 }
