@@ -19,7 +19,7 @@ public class UserController {
   private UserService userService;
 
   @PostMapping("/register")
-  public User registerUser(@RequestBody User user) {
+  public User registerUser(@RequestBody User user) throws Exception {
     return userService.createUser(user);
   }
 

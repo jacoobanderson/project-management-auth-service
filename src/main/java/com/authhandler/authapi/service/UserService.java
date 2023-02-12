@@ -9,6 +9,7 @@ import com.authhandler.authapi.model.User;
 import com.authhandler.authapi.repository.UserRepository;
 import com.common.JwtResponse;
 import com.common.JwtUtil;
+import com.mongodb.MongoWriteException;
 
 @Service
 public class UserService {
@@ -21,9 +22,19 @@ public class UserService {
   @Autowired
   private JwtUtil jwtUtil;
 
-  public User createUser(User user) {
+  public User createUser(User user) throws Exception {
+    if (userRepository.findByUsername(user.getUsername()) != null) {
+      throw new Exception("Username already exists");
+    }
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-    return userRepository.save(user);
+    try {
+      return userRepository.save(user);
+    } catch (MongoWriteException error) {
+        if (error.getError().getCode() == 11000) {
+          throw new Exception("Username already exists.");
+        }
+        throw error;
+    }
   }
 
   public JwtResponse login(LoginRequest login) {
