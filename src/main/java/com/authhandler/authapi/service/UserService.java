@@ -45,4 +45,16 @@ public class UserService {
     }
     return null;
   }
+
+  public void setJwtUtil(JwtUtil jwtUtil2) {
+    this.jwtUtil = jwtUtil2;
+  }
+
+  public void setBCryptPasswordEncoder(BCryptPasswordEncoder bCryptPasswordEncoder2) {
+    this.bCryptPasswordEncoder = bCryptPasswordEncoder2;
+  }
+
+public void setUserRepository(UserRepository userRepository2) {
+  this.userRepository = userRepository2;
+}
 }
