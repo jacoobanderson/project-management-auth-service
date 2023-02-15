@@ -54,7 +54,7 @@ public class UserService {
     this.bCryptPasswordEncoder = bCryptPasswordEncoder2;
   }
 
-public void setUserRepository(UserRepository userRepository2) {
-  this.userRepository = userRepository2;
-}
+  public void setUserRepository(UserRepository userRepository2) {
+    this.userRepository = userRepository2;
+  }
 }
